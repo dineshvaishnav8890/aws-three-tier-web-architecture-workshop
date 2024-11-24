@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
-          path: aws-three-tier-web-architecture-workshop/application-code/app-tier/build
+          path: aws-three-tier-web-architecture-workshop/application-code/app-tier
 
       # Step 6: Set up Java 17
       - name: Set up Java
