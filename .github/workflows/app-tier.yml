@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-artifact
-          path: ./app-tier/build
+          path: ./application-code/app-tier/build
 
 
       # Step 5: Upload the build folder as an artifact
