@@ -25,12 +25,12 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ./frontend
+        working-directory: ./application-code/app-tier
 
       # Step 4: Build the React app
       - name: Build React app
         run: npm run build  
-        working-directory: ./frontend
+        working-directory: ./application-code/app-tier
 
 
 
