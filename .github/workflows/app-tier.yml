@@ -28,23 +28,23 @@ jobs:
         #working-directory: /app-tier/
 
       # Step 4: Build the React application in the app-tier folder
-      - name: Build the application
-        run: npm run build
-        working-directory : ./aws-three-tier-web-architecture-workshop/application-code/app-tier
+     # - name: Build the application
+      #  run: npm run build
+       # working-directory : ./aws-three-tier-web-architecture-workshop/application-code/app-tier
 
       # Step 5: Upload the build folder as an artifact
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifact
-          path: app-tier/build
+     # - name: Upload build artifact
+      #  uses: actions/upload-artifact@v4
+       # with:
+        #  name: build-artifact
+         # path: app-tier/build
 
       # Step 6: Set up Java 17
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'  # Specify the Java distribution
+      #- name: Set up Java
+       # uses: actions/setup-java@v3
+        #with:
+         # java-version: '17'
+          #distribution: 'temurin'  # Specify the Java distribution
 
       # Step 7: Run SonarQube scan
      # - name: SonarQube scan
