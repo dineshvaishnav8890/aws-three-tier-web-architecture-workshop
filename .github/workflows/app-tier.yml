@@ -1,25 +1,29 @@
-name: Deploy Frontend
-
+name: React App Build CI
+# Trigger the workflow on push to the css-test branch
 on:
   push:
-     branches:
-     - main
-  
-
+    branches:
+      - main
 jobs:
-  build-and-deploy:
+  build:
+    # Define a matrix strategy to run the job on multiple Node.js versions
     runs-on: ubuntu-latest
-
+   
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
-
-     # Step 3: Install npm dependencies
-    - name: Install dependencies
-      run: npm install
-      working-directory: ./application-code/app-tier
+      # Step 1: Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      # Step 2: Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      # Step 3: Install npm dependencies
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./application-code/app-tier
         
-    - name: Build Frontend
-      run: |
-        cd application-code/app-tier
-        npm run build
+    # Step 4: Build the React application
+      - name: Build the application
+        run: npm run build
+        working-directory: ./application-code/app-tier
