@@ -23,9 +23,9 @@ jobs:
           node-version: 18
 
       # Step 3: Install npm dependencies in the app-tier folder
-      - name: Install dependencies
-        run: npm install
-        working-directory: /app-tier/
+      #- name: Install dependencies
+       # run: npm install
+        #working-directory: /app-tier/
 
       # Step 4: Build the React application in the app-tier folder
       - name: Build the application
