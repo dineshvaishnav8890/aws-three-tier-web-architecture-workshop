@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    # Define a matrix strategy to run the job on multiple Node.js versions
+    # Run the job on the latest Ubuntu environment
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +21,16 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the React app
+      - name: Build React app
+        run: npm run build  
+
+
 
       # Step 3: Install npm dependencies in the app-tier folder
       #- name: Install dependencies
