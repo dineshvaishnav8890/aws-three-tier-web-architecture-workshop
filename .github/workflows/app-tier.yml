@@ -16,9 +16,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        cd application-code/app-tier
+        
         npm install
         working-directory: ./application-code/app-tier
+        
     - name: Build Frontend
       run: |
         cd application-code/app-tier
