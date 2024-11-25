@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - ./web-tier
+      - ./application-code/app-tier
 jobs:
   build:
     # Define a matrix strategy to run the job on multiple Node.js versions
@@ -23,7 +23,7 @@ jobs:
       # Step 3: Install npm dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ./web-tier
+        working-directory: ./app-tier
       # Step 4: Build the React application
       #- name: Build the application
       #  run: npm run build
