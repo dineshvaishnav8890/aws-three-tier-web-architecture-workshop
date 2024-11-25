@@ -18,15 +18,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          
       # Step 3: Install npm dependencies
       - name: Install dependencies
         run: npm install
         working-directory: ./application-code/app-tier
+        
       # Step 4: Build the React application
-      #- name: Build the application
-      #  run: npm run build
-      #  working-directory: ./aws-three-tier-web-architecture-workshop/application-code/web-tier/package.json
-          
+      - name: Build the application
+        run: npm run build
+        working-directory: ./application-code/app-tier
+        
       # Step 5: Upload the build folder as an artifact
       #- name: Upload build artifact
       #  uses: actions/upload-artifact@v4
